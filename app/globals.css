@@ -37,6 +37,7 @@ body {
   background-color: #fef9ee;
   color: #1d1c15;
   font-family: var(--font-jakarta), sans-serif;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .font-headline {
@@ -89,7 +90,7 @@ body {
   background-size: 14px 10px;
 }
 
-/* Rubber stamp aesthetic from Stitch Design System */
+/* Rubber stamp aesthetic */
 .rubber-stamp {
   display: inline-block;
   padding: 0.2rem 0.5rem;
@@ -118,10 +119,15 @@ body {
   border-bottom: 2px dashed #c7c7c0;
 }
 
+/* Mobile safe area padding helper */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 1rem);
+}
+
 /* Custom subtle scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
 }
 ::-webkit-scrollbar-track {
   background: #f3ede2;
@@ -129,6 +135,11 @@ body {
 ::-webkit-scrollbar-thumb {
   background: #767872;
   border-radius: 2px;
+}
+
+/* Touch responsiveness */
+button, input, select, textarea {
+  touch-action: manipulation;
 }
 
 @media print {
